@@ -1,6 +1,7 @@
 package app;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -46,12 +47,23 @@ public class Colecciones {
             System.out.println(num);
         }
         
+        //ordenando el arraylist, se usa sort de Colecctions
+        Collections.sort(numerosA);
+        System.out.println("");
+        System.out.println("lista ordenada ");
+        for(Integer num: numerosA){
+            System.out.println(num);
+        }
+        
+        
         //Ejemplo de un LinkeList de numeros
         //Los LinkedList puede recorrer hacia adelante y hacia atras
         LinkedList<Integer> numeroB = new LinkedList();
         
+        
+        
         System.out.println("");
-        System.out.println("Conjunetos");
+        System.out.println("Conjuntos");
         //conjuntos
         //Ejemplo de un HashSet de cadenas
         HashSet<Integer> numerosB = new HashSet();
@@ -73,6 +85,16 @@ public class Colecciones {
         numerosB.remove(15);
         
         for(Integer num: numerosB){
+            System.out.println(num);
+        }
+        
+        //ordenando un conjunto, al tener valores hash se deben convertir a un
+        //array para poder ordenarlo
+        ArrayList<Integer> numerosLista = new ArrayList(numerosB);
+        Collections.sort(numerosLista);
+        System.out.println("");
+        System.out.println("conjunto ordenado");
+        for(Integer num: numerosLista){
             System.out.println(num);
         }
         
@@ -114,9 +136,20 @@ public class Colecciones {
             System.out.println("dni: "+dnis);
         }
         
+        System.out.println("");
         System.out.println("Recorrer el Mapa sin usar Map.Entry - solo valores");
         for(String nombres: personasA.values()){
             System.out.println("nombres: "+nombres);
+        }
+        
+        //para ordenar un mapa de tipo hash, lo convertimos a un mapa de tipo
+        //tree, ya que los de tipo TreeMap y TreeSet se ordenan solos
+        //lo ordena por medio de su llave
+        System.out.println("");
+        System.out.println("mapa ordenado");
+        TreeMap<Integer, String> personasATree = new TreeMap(personasA);
+        for(Map.Entry<Integer, String> entry: personasATree.entrySet()){
+            System.out.println("dni: "+entry.getKey()+" - nombre: "+entry.getValue());
         }
         
         
