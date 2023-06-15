@@ -1,7 +1,9 @@
 
 package errores;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class DeteccionErrores {
@@ -26,6 +28,34 @@ public class DeteccionErrores {
         
         for(Map.Entry<Integer, String> entry: personas.entrySet()){
             System.out.println("Nro: "+entry.getKey()+" - nombre: "+entry.getValue());
+        }
+        
+        //ArrayList<String> = new ArrayList()
+        //bebidas.put(“café);
+        //bebidas.add(“té”);
+        //Iterator<String> it =bebidas.iterator();
+        //whale (it.next()){
+        //if (it.next().equals(“café”)){
+        //it.remove();
+        //}
+        
+        //solucion
+        //no tiene nombre la variable
+        ArrayList<String> bebidas = new ArrayList();
+        //usamos add
+        bebidas.add("café");
+        bebidas.add("té");
+        Iterator<String> it =bebidas.iterator();
+        //nombre errado y se usamos hasNext
+        while (it.hasNext()){
+            if (it.next().equals("café")){
+                it.remove();
+            }
+        }
+        
+        //mostramos los valores
+        for(String bebi: bebidas){
+            System.out.println(bebi);
         }
     }
     

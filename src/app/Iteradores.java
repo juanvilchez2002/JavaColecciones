@@ -67,6 +67,8 @@ public class Iteradores {
         
         System.out.println("");
         System.out.println("Elementos del Conjunto - 3");
+        
+        //observar que se debe hacer comparación con OBJ
         while(its.hasNext()){
             if(its.next().equals(3)){
                 its.remove();
